@@ -43,17 +43,8 @@
                                     <action selector="rightSignBTNPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvH-2x-1wW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yZ-II-gy6">
-                                <rect key="frame" x="151" y="587" width="113" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <state key="normal" title="Play Again"/>
-                                <connections>
-                                    <action selector="playAgainBTNPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zyd-Ch-fbh"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYv-bG-A7o">
-                                <rect key="frame" x="20" y="334" width="374" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CYv-bG-A7o">
+                                <rect key="frame" x="20" y="334" width="374" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
@@ -66,17 +57,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yZ-II-gy6">
+                                <rect key="frame" x="139" y="585" width="137" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="playAgainBTNPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zyd-Ch-fbh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="appSign" destination="N7k-A0-GVQ" id="Ybh-lH-6A6"/>
+                        <outlet property="appSignLabel" destination="N7k-A0-GVQ" id="Ybh-lH-6A6"/>
                         <outlet property="centerSignBTN" destination="oVG-U3-dm4" id="DAe-0H-mHM"/>
-                        <outlet property="gameStatus" destination="CYv-bG-A7o" id="UBh-TW-Ang"/>
                         <outlet property="leftSignBTN" destination="xTO-sf-0VA" id="nqe-Lr-20p"/>
                         <outlet property="playAgainBTN" destination="1yZ-II-gy6" id="ROH-Zf-qrl"/>
                         <outlet property="rightSignBTN" destination="T4x-Cc-2fp" id="L87-qW-6H3"/>
+                        <outlet property="statusLabel" destination="CYv-bG-A7o" id="UBh-TW-Ang"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
