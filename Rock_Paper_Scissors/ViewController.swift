@@ -36,10 +36,8 @@ class ViewController: UIViewController {
             view.backgroundColor = UIColor.cyan
             appSignLabel.text = "🤖"
             
-            playAgainBTN.isHidden = true
-            leftSignBTN.isHidden = false
-            centerSignBTN.isHidden = false
-            rightSignBTN.isHidden = false
+            updateBTN(activeBTNs: leftSignBTN, centerSignBTN, rightSignBTN)
+            
             
         case .win:
             view.backgroundColor = UIColor.green
@@ -55,12 +53,28 @@ class ViewController: UIViewController {
         let appSign = randomSign()
         updateUI(gameState: sign.doesItBeat(anotherSign: appSign))
         appSignLabel.text = appSign.emoji
+
+        switch sign {
+        case .rock:
+            updateBTN(activeBTNs: playAgainBTN, leftSignBTN)
+        case .paper:
+            updateBTN(activeBTNs: playAgainBTN, centerSignBTN)
+        case .scissors:
+            updateBTN(activeBTNs: playAgainBTN, rightSignBTN)
+        }
+    }
+    
+    
+    func updateBTN(activeBTNs: UIButton...) {
+        let allBTNs = [leftSignBTN, centerSignBTN, rightSignBTN, playAgainBTN]
+        for button in allBTNs {
+            button?.isHidden = true
+        }
+        for BTN in activeBTNs {
+            BTN.isHidden = false
+        }
+    
         
-        leftSignBTN.isHidden = true
-        centerSignBTN.isHidden = true
-        rightSignBTN.isHidden = true
-        
-        playAgainBTN.isHidden = false
     }
     
     @IBAction func leftSignBTNPressed(_ sender: UIButton) {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 func randomSign() -> Sign {
@@ -26,34 +27,26 @@ enum Sign: Int {
         }
     }
     
+    
+    
    
     func doesItBeat(anotherSign: Sign) -> GameState {
         
+        if self == anotherSign {
+            return .draw
+        }
+        
         switch anotherSign {
         case .rock:
-            if self == .rock {
-                return .draw
-            } else if self == .paper {
-                return .win
-            } else {
-                return .lose
-            }
+            return self == .paper ? .win : .lose
+
         case .paper:
-            if self == .rock {
-                return .lose
-            } else if self == .paper {
-                return .draw
-            } else {
-                return .win
-            }
+            return self == .scissors ? .win : .lose
+
         case .scissors:
-            if self == .rock {
-                return .win
-            } else if self == .paper {
-                return .lose
-            } else {
-                return .draw
-            }
+            return self == .rock ? .win : .lose
+            
+
         }
         
     }
